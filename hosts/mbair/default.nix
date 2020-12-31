@@ -18,11 +18,17 @@ with lib.my;
 
   networking.useDHCP = false;
 
+  xsession = {
+    enable = true;
+    windowManager.command = "exec -l $SHELL -c gnome-session";
+  };
+
   services.xserver = {
     enable = true;
     displayManager.gdm.enable = true;
     desktopManager.gnome3.enable = true;
-    windowManager.command = "exec -l $SHELL -c gnome-session";
+
+    # windowManager.bspwm.enable = true;
   };
 
   networking.networkmanager.enable = true;
