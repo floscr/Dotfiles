@@ -8,20 +8,20 @@ with lib.my;
   ];
   modules = {
     shell = {
-      direnv.enable = true;
+      # direnv.enable = true;
       git.enable    = true;
-      gnupg.enable  = true;
-      pass.enable   = true;
+      # gnupg.enable  = true;
+      # pass.enable   = true;
       zsh.enable    = true;
     };
   };
 
   networking.useDHCP = false;
+
   services.xserver = {
     enable = true;
     displayManager.gdm.enable = true;
     desktopManager.gnome3.enable = true;
-    windowManager.bspwm.enable = true;
   };
 
   networking.networkmanager.enable = true;
