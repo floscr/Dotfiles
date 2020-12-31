@@ -21,10 +21,12 @@ with lib.my;
   services.xserver = {
     enable = true;
     displayManager.gdm.enable = true;
-    displayManager.sessionCommands = "${pkgs.gnome3.gnome-session}/bin/gnome-session";
     desktopManager.gnome3.enable = true;
 
-    # windowManager.bspwm.enable = true;
+    services.xserver.displayManager.sessionCommands = ''
+      ${pkgs.xorg.xrandr}/bin/xrandr --setprovideroutputsource modesetting NVIDIA-0
+      ${pkgs.xorg.xrandr}/bin/xrandr --auto
+    '';
   };
 
   networking.networkmanager.enable = true;
