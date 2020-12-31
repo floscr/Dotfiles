@@ -21,7 +21,7 @@ with lib.my;
   services.xserver = {
     enable = true;
     displayManager.gdm.enable = true;
-    displayManager.sessionCommands = "exec -l $SHELL -c gnome-session";
+    displayManager.sessionCommands = "${pkgs.gnome3.gnome-session}/bin/gnome-session";
     desktopManager.gnome3.enable = true;
 
     # windowManager.bspwm.enable = true;
