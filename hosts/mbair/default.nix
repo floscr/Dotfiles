@@ -22,6 +22,7 @@ with lib.my;
     enable = true;
     displayManager.gdm.enable = true;
     desktopManager.gnome3.enable = true;
+    windowManager.command = "exec -l $SHELL -c gnome-session";
   };
 
   networking.networkmanager.enable = true;
