@@ -23,7 +23,7 @@ with lib.my;
     displayManager.gdm.enable = true;
     desktopManager.gnome3.enable = true;
 
-    services.xserver.displayManager.sessionCommands = ''
+    displayManager.sessionCommands = ''
       ${pkgs.xorg.xrandr}/bin/xrandr --setprovideroutputsource modesetting NVIDIA-0
       ${pkgs.xorg.xrandr}/bin/xrandr --auto
     '';
